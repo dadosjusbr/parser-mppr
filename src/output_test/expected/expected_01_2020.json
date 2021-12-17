@@ -1,0 +1,125 @@
+{
+    "contraCheque": [
+        {
+            "idContraCheque": "mppr/01/2020/1",
+            "chaveColeta": "mppr/01/2020",
+            "nome": "ADAUTO SALVADOR REIS FACCO",
+            "funcao": "PROMOTOR DE JUSTICA",
+            "localTrabalho": "CURITIBA - 1a. VARA CIVEL",
+            "ativo": true,
+            "remuneracoes": {
+                "remuneracao": [
+                    {
+                        "categoria": "contracheque",
+                        "item": "Remuneração do Cargo Efetivo",
+                        "valor": 33689.11
+                    },
+                    {
+                        "categoria": "contracheque",
+                        "item": "Outras Verbas Remuneratórias Legais/Judiciais",
+                        "tipoReceita": "O"
+                    },
+                    {
+                        "categoria": "contracheque",
+                        "item": "Função de Confiança ou Cargo em Comissão",
+                        "tipoReceita": "O"
+                    },
+                    {
+                        "categoria": "contracheque",
+                        "item": "13o. Salário",
+                        "valor": 308.82,
+                        "tipoReceita": "O"
+                    },
+                    {
+                        "categoria": "contracheque",
+                        "item": "Adicional de Férias",
+                        "tipoReceita": "O"
+                    },
+                    {
+                        "categoria": "contracheque",
+                        "item": "Abono de Permanência",
+                        "valor": 3705.8,
+                        "tipoReceita": "O"
+                    },
+                    {
+                        "categoria": "contracheque",
+                        "item": "Outras Remunerações Temporárias",
+                        "valor": 3705.8,
+                        "tipoReceita": "O"
+                    },
+                    {
+                        "categoria": "contracheque",
+                        "item": "Verbas Indenizatórias",
+                        "valor": 2668.36,
+                        "tipoReceita": "O"
+                    },
+                    {
+                        "natureza": "D",
+                        "categoria": "contracheque",
+                        "item": "Contribuição Previdenciária",
+                        "valor": -3705.8
+                    },
+                    {
+                        "natureza": "D",
+                        "categoria": "contracheque",
+                        "item": "Imposto de Renda",
+                        "valor": -9447.01
+                    },
+                    {
+                        "natureza": "D",
+                        "categoria": "contracheque",
+                        "item": "Retenção do Teto"
+                    },
+                    {
+                        "categoria": "indenizacoes",
+                        "item": "Auxílio alimentação",
+                        "valor": 995.08,
+                        "tipoReceita": "O"
+                    },
+                    {
+                        "categoria": "indenizacoes",
+                        "item": "Auxílio saúde",
+                        "valor": 979.68,
+                        "tipoReceita": "O"
+                    },
+                    {
+                        "categoria": "indenizacoes",
+                        "item": "Auxílio Pré Escolar",
+                        "tipoReceita": "O"
+                    },
+                    {
+                        "categoria": "indenizacoes",
+                        "item": "Auxílio Cursos",
+                        "tipoReceita": "O"
+                    },
+                    {
+                        "categoria": "indenizacoes",
+                        "item": "Auxílio Moradia",
+                        "valor": 4377.73,
+                        "tipoReceita": "O"
+                    },
+                    {
+                        "categoria": "indenizacoes",
+                        "item": "Adicional Noturno",
+                        "tipoReceita": "O"
+                    },
+                    {
+                        "categoria": "indenizacoes",
+                        "item": "Serviço Extraor.",
+                        "tipoReceita": "O"
+                    },
+                    {
+                        "categoria": "indenizacoes",
+                        "item": "Substituição de Função",
+                        "tipoReceita": "O"
+                    },
+                    {
+                        "categoria": "indenizacoes",
+                        "item": "Cumulações",
+                        "tipoReceita": "O"
+                    }
+                ]
+            }
+        }
+    ]
+}
