@@ -19,7 +19,7 @@ def captura(month, year):
     Nessa data ocorre uma mudança nos formatos das planilhas,
     tanto as de remunerações quando as indenizatorias.
     """
-    if (year == "2020" and month == "01"):
+    if (year == 2020 and month == 1):
         metadado.formato_consistente = False
         
     return metadado
