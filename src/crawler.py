@@ -12,7 +12,7 @@ def download(url, file_path, year, month):
     try:
       response = requests.get(url, allow_redirects=True)
     #   Quando o órgão não publica dados, o coletor baixa o html que retorna '404 Not Found'
-      if '404 Not Found' in response.text:
+      if response.status_code == 404:
           sys.stderr.write(f"Não existe planilhas para {month}/{year}.")
           sys.exit(4)
       with open(file_path, "wb") as file:
