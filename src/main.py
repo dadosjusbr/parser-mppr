@@ -6,7 +6,6 @@ from coleta import coleta_pb2 as Coleta, IDColeta
 from google.protobuf.timestamp_pb2 import Timestamp
 from google.protobuf import text_format
 
-import crawler
 from parser import parse
 import metadado
 import data
@@ -34,7 +33,11 @@ if "CRAWLER_VERSION" in os.environ:
     crawler_version = os.environ["CRAWLER_VERSION"]
 else:
     crawler_version = "unspecified"
-
+    
+if "PARSER_VERSION" in os.environ:
+    PARSER_VERSION = os.environ["PARSER_VERSION"]
+else:
+    PARSER_VERSION = "unspecified"
 
 def parse_execution(data, file_names):
     # Cria objeto com dados da coleta.
@@ -45,6 +48,8 @@ def parse_execution(data, file_names):
     coleta.ano = int(year)
     coleta.repositorio_coletor = "https://github.com/dadosjusbr/coletor-mppr"
     coleta.versao_coletor = crawler_version
+    coleta.repositorio_parser = "https://github.com/dadosjusbr/parser-mppr"
+    coleta.versao_parser = PARSER_VERSION
     coleta.arquivos.extend(file_names)
     timestamp = Timestamp()
     timestamp.GetCurrentTime()
@@ -68,7 +73,7 @@ def parse_execution(data, file_names):
 
 # Main execution
 def main():
-    file_names = crawler.crawl(year, month, output_path)
+    file_names = [f.rstrip() for f in sys.stdin.readlines()]
 
     dados = data.load(file_names, year, month, output_path)
     dados.validate()  # Se não acontecer nada, é porque está tudo ok!

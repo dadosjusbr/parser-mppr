@@ -63,49 +63,49 @@
                         "item": "Retenção do Teto"
                     },
                     {
-                        "categoria": "indenizacoes",
+                        "categoria": "indenizacoes_2019",
                         "item": "Auxílio alimentação",
                         "valor": 967.34,
                         "tipoReceita": "O"
                     },
                     {
-                        "categoria": "indenizacoes",
+                        "categoria": "indenizacoes_2019",
                         "item": "Auxílio saúde",
                         "valor": 1077.65,
                         "tipoReceita": "O"
                     },
                     {
-                        "categoria": "indenizacoes",
+                        "categoria": "indenizacoes_2019",
                         "item": "Auxílio Pré Escolar",
                         "tipoReceita": "O"
                     },
                     {
-                        "categoria": "indenizacoes",
+                        "categoria": "indenizacoes_2019",
                         "item": "Auxílio Cursos",
                         "tipoReceita": "O"
                     },
                     {
-                        "categoria": "indenizacoes",
+                        "categoria": "indenizacoes_2019",
                         "item": "Auxílio Moradia",
                         "tipoReceita": "O"
                     },
                     {
-                        "categoria": "indenizacoes",
+                        "categoria": "indenizacoes_2019",
                         "item": "Adicional Noturno",
                         "tipoReceita": "O"
                     },
                     {
-                        "categoria": "indenizacoes",
+                        "categoria": "indenizacoes_2019",
                         "item": "Serviço Extraor.",
                         "tipoReceita": "O"
                     },
                     {
-                        "categoria": "indenizacoes",
+                        "categoria": "indenizacoes_2019",
                         "item": "Substituição de Função",
                         "tipoReceita": "O"
                     },
                     {
-                        "categoria": "indenizacoes",
+                        "categoria": "indenizacoes_2019",
                         "item": "Cumulações",
                         "tipoReceita": "O"
                     }

@@ -6,6 +6,7 @@ from coleta import coleta_pb2 as Coleta
 
 from headers_keys import (CONTRACHEQUE,
                           CONTRACHEQUE_2019,
+                          INDENIZACOES_2019,
                           INDENIZACOES, HEADERS)
 import number
 
@@ -18,7 +19,7 @@ def parse_employees(fn, chave_coleta, categoria):
         function = row[1]
         location = row[2]
 
-        if "registros listados." in str(name):
+        if "registros listados." in str(name) or "registro(s) listado(s)" in str(name):
             break
         if not number.is_nan(name) and name != "0" and name != "Nome" and "Unnamed" not in name :
             membro = Coleta.ContraCheque()
@@ -92,7 +93,10 @@ def parse(data, chave_coleta, month, year):
     else:
         employees.update(parse_employees(data.contracheque, chave_coleta, CONTRACHEQUE))
 
-    update_employees(data.indenizatorias, employees, INDENIZACOES)
+    if year == "2018" or (year == "2019" and int(month) < 10):
+        update_employees(data.indenizatorias, employees, INDENIZACOES_2019)
+    else:
+        update_employees(data.indenizatorias, employees, INDENIZACOES)
 
     for i in employees.values():
         folha.contra_cheque.append(i)
