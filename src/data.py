@@ -9,7 +9,7 @@ STATUS_DATA_UNAVAILABLE = 4
 STATUS_INVALID_FILE = 5
 
 
-def _readOds(file):
+def _read_ods(file):
     try:
         data = pd.read_excel(file, engine="odf").to_numpy()
     except Exception as excep:
@@ -17,7 +17,7 @@ def _readOds(file):
         sys.exit(STATUS_INVALID_FILE)
     return data
 
-def _readXls(file):
+def _read_xls(file):
     try:
         data = pd.read_excel(file).to_numpy()
     except Exception as excep:
@@ -40,11 +40,11 @@ def load(file_names, year, month, output_path):
     indenizatorias = [i for i in file_names if "indenizatorias" in i][0]
     
     if int(year) < 2023 or (int(year)==2023 and int(month) <= 5):
-        contracheque = _readOds(contracheque)
-        indenizatorias = _readOds(indenizatorias)
+        contracheque = _read_ods(contracheque)
+        indenizatorias = _read_ods(indenizatorias)
     else:
-        contracheque = _readXls(contracheque)
-        indenizatorias = _readXls(indenizatorias)
+        contracheque = _read_xls(contracheque)
+        indenizatorias = _read_xls(indenizatorias)
 
     return Data(contracheque, indenizatorias, year, month, output_path)
 
