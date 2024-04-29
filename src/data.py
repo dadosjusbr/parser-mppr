@@ -9,9 +9,17 @@ STATUS_DATA_UNAVAILABLE = 4
 STATUS_INVALID_FILE = 5
 
 
-def _read(file):
+def _readOds(file):
     try:
         data = pd.read_excel(file, engine="odf").to_numpy()
+    except Exception as excep:
+        print(f"Erro lendo as planilhas: {excep}", file=sys.stderr)
+        sys.exit(STATUS_INVALID_FILE)
+    return data
+
+def _readXls(file):
+    try:
+        data = pd.read_excel(file).to_numpy()
     except Exception as excep:
         print(f"Erro lendo as planilhas: {excep}", file=sys.stderr)
         sys.exit(STATUS_INVALID_FILE)
@@ -28,8 +36,15 @@ def load(file_names, year, month, output_path):
      :return um objeto Data() pronto para operar com os arquivos
     """
 
-    contracheque = _read([c for c in file_names if "contracheque" in c][0])
-    indenizatorias = _read([i for i in file_names if "indenizatorias" in i][0])
+    contracheque = [c for c in file_names if "contracheque" in c][0]
+    indenizatorias = [i for i in file_names if "indenizatorias" in i][0]
+    
+    if int(year) < 2023 or (int(year)==2023 and int(month) <= 5):
+        contracheque = _readOds(contracheque)
+        indenizatorias = _readOds(indenizatorias)
+    else:
+        contracheque = _readXls(contracheque)
+        indenizatorias = _readXls(indenizatorias)
 
     return Data(contracheque, indenizatorias, year, month, output_path)
 
@@ -49,13 +64,17 @@ class Data:
         de controle de dados dara um erro retornando o codigo de erro 4,
         esse codigo significa que não existe dados para a data pedida.
         """
-
+        
+        extension = "xls"
+        if int(self.year) < 2023 or (int(self.year)==2023 and int(self.month) <= 5):
+            extension = "ods"
+            
         if not (
             os.path.isfile(
-                f"{self.output_path}/membros-ativos-contracheque-{self.month}-{self.year}.ods"
+                f"{self.output_path}/membros-ativos-contracheque-{self.month}-{self.year}.{extension}"
             )
             or os.path.isfile(
-                f"{self.output_path}/membros-verbas-indenizatorias-{self.month}-{self.year}.ods"
+                f"{self.output_path}/membros-verbas-indenizatorias-{self.month}-{self.year}.{extension}"
             )
         ):
             sys.stderr.write(f"Não existe planilhas para {self.month}/{self.year}.")

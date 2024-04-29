@@ -42,18 +42,6 @@
                         "tipoReceita": "O"
                     },
                     {
-                        "categoria": "contracheque",
-                        "item": "Outras Remunerações Temporárias",
-                        "valor": 3705.8,
-                        "tipoReceita": "O"
-                    },
-                    {
-                        "categoria": "contracheque",
-                        "item": "Verbas Indenizatórias",
-                        "valor": 2668.36,
-                        "tipoReceita": "O"
-                    },
-                    {
                         "natureza": "D",
                         "categoria": "contracheque",
                         "item": "Contribuição Previdenciária",
@@ -73,13 +61,13 @@
                     {
                         "categoria": "indenizacoes",
                         "item": "Auxílio alimentação",
-                        "valor": 995.08,
+                        "valor": 1003.64,
                         "tipoReceita": "O"
                     },
                     {
                         "categoria": "indenizacoes",
                         "item": "Auxílio saúde",
-                        "valor": 979.68,
+                        "valor": 1664.72,
                         "tipoReceita": "O"
                     },
                     {
@@ -95,7 +83,11 @@
                     {
                         "categoria": "indenizacoes",
                         "item": "Auxílio Moradia",
-                        "valor": 4377.73,
+                        "tipoReceita": "O"
+                    },
+                    {
+                        "categoria": "indenizacoes",
+                        "item": "Valores Atrasados do Exercício Atual",
                         "tipoReceita": "O"
                     },
                     {
@@ -116,6 +108,7 @@
                     {
                         "categoria": "indenizacoes",
                         "item": "Cumulações",
+                        "valor": 3705.8,
                         "tipoReceita": "O"
                     }
                 ]
